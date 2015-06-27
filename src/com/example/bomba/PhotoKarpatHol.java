@@ -29,6 +29,7 @@ public class PhotoKarpatHol {
 	 }
 }
 //Izmeneniya
+//2e izment 
 /*class MyTask extends AsyncTask<Void, Void, Void> {
 	 final String LOG_TAG = "myLogs";
   @Override
