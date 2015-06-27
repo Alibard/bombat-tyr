@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <Button
+        android:id="@+id/zkp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Закарпаття та травневі свята" />
+
+    <Button
+        android:id="@+id/volman"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Волинські мандри" />
+
+    <Button
+        android:id="@+id/kampod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Кам&apos;янець Подільський" />
+
+    <Button
+        android:id="@+id/lviv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Львів. Супер кубок України" />
+
+    <Button
+        android:id="@+id/karpat1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Карпати 25-27 липня 2014" />
+
+    <Button
+        android:id="@+id/karpat2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Карпати 23-25 серпня 2014" />
+
+    <Button
+        android:id="@+id/koblevo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="КОБЛЕВО 29-31 СЕРПНЯ 2014" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

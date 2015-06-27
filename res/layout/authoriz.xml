@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal|left"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/kabinet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="5px"
+        android:text="Мій кабінет"
+        android:textColor="#FF0000" />
+
+     <FrameLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+           android:gravity="center_horizontal">
+
+         <Button
+             android:id="@+id/btnNaut"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="right"
+             android:background="@drawable/button"
+             android:drawableLeft="@drawable/vk"
+             android:paddingLeft="4px"
+             android:text="Вихід"
+             android:paddingRight="5px"
+             android:textSize="7pt" />
+
+         <Button
+             android:id="@+id/btnaut"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/button"
+             android:drawableLeft="@drawable/vk"
+             android:paddingLeft="4px"
+             android:text="Авторизацsя"
+             android:textSize="7pt" 
+              android:layout_gravity="center_horizontal"/>
+
+         <TextView
+             android:id="@+id/name"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="left|center"
+             android:paddingLeft="5px"
+             android:text="Ваші ініціали" />
+
+     </FrameLayout>
+
+     <Button
+         android:id="@+id/his"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center_horizontal"
+         android:text="Показати історію подорожей"/>
+
+     <ListView
+         android:id="@+id/hislist"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content" >
+     </ListView>
+
+</LinearLayout>
