@@ -2,7 +2,16 @@
 
 #Initializa SDK
 
-To properly work SKD need be initia
+To properly work SKD need be initialized
+```java
+public class MyApplication extends Application{
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        TabatoSDK.Initialize(this);
+    }
+}
+```
 
 ###Authorize Module 
 This module should connect application and API on Tabata Server.
