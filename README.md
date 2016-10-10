@@ -1,5 +1,9 @@
 ## Tabata SDK
 
+#Initializa SDK
+
+To properly work SKD need be initia
+
 ###Authorize Module 
 This module should connect application and API on Tabata Server.
 
