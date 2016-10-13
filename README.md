@@ -1,6 +1,6 @@
 ## Tabata SDK
 
-#Initializa SDK
+#Initialize SDK
 
 To properly work SKD need be initialized
 ```java
@@ -8,7 +8,7 @@ public class MyApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
-        TabatoSDK.Initialize(this);
+        TabataSDK.Initialize(this);
     }
 }
 ```
@@ -21,27 +21,17 @@ Usage
 
 
 ```java
-AuthorizeManager autorize = new AuthorizeManager.AuthorizeManagerBuilder()
-                                                 .setmIntegrationId("12345678")
-                                                 .build();
+AuthorizeManager authorize = new AuthorizeManager.Builder()
+                                                 .setIntegrationId("12345678")
+                                                 .build(getApplicationContext ());
                                                  
                                                  
- autorize.startAuthorization(new OnErrorListener() {
-                    @Override
-                    public void OnError(String message) {
-                        Log.i(TAG, "OnError: " + message);
-                    }
-                }, new OnSuccessListener() {
-                    @Override
-                    public void OnSuccess(String message) {
-                        Log.i(TAG, "OnSuccess: " + message);
-                    }
-                });    
+ authorize.startAuthorization(getApplicationContext ());    
 ```       
 
 ## AdditionalData 
 
-It's custom fiels of user profile will be sent to the Tabat server.
+It's custom field of user profile will be sent to the Tabat server.
 
 ```java
  final ArrayList<AdditionalDataModel> list = new ArrayList<AdditionalDataModel>();
@@ -55,15 +45,15 @@ Example of adding list of additional data to SDK.
 final ArrayList<AdditionalDataModel> list = new ArrayList<AdditionalDataModel>();
 list.add(new AdditionalDataModel("color", "read", AdditionalDataModel.NO_VALIDATION));
 
-AuthorizeManager autorize = new AuthorizeManager.AuthorizeManagerBuilder()
-                        .setmIntegrationId("12345678")
+AuthorizeManager authorize = new AuthorizeManager.Builder()
+                        .setIntegrationId("12345678")
                         .setAdditionalUserData(list)
                         .build();
 ```   
 
-# Custom syles
+# Custom styles
 
-SDK has 8 type of elemnts:
+SDK has 8 type of elements:
 
  * TITLE
  * BUTTON
@@ -88,10 +78,10 @@ SDK has 8 type of elemnts:
    final ArrayList<CustomStyle> styles = new ArrayList<>();
    styles.add(myStyle);
    
-                AuthorizeManager autorize = new AuthorizeManager.AuthorizeManagerBuilder()
-                        .setmIntegrationId("12345678")
+                AuthorizeManager autorize = new Builder()
+                        .setIntegrationId("12345678")
                         .setCustomStyle(styles)
-                        .build();
+                        .build(getApplicationContext ());
   ```                      
   
  Field what you don't want change set as 0. But typeFace should be null to set default value.
@@ -106,3 +96,5 @@ SDK has 8 type of elemnts:
 ##Setting Local doesn't work in this version. 
   
  
+
+
