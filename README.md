@@ -103,6 +103,6 @@ SDK has 8 type of elemnts:
                 ,getResources().getColor(R.color.textColor)
                 , CustomStyle.Type.MESSAGE);
 ``` 
-Setting Local doesn't work in this version. 
+##Setting Local doesn't work in this version. 
   
  
