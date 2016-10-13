@@ -63,11 +63,15 @@ AuthorizeManager autorize = new AuthorizeManager.AuthorizeManagerBuilder()
 
 # Custom syles
 
-SDK has 4 type of elemnts:
- * Title
- * Message
- * Button
- * Edit field
+SDK has 8 type of elemnts:
+ * TITLE
+ * BUTTON
+ * MESSAGE
+ * EDIT_FIELD
+ * MAIN_LAYOUT
+ * PHONE_TITLE
+ * PHONE_PREFIX
+ * TEXT_BUTTON
  
  Example of adding Custom style  to SDK.
  
@@ -80,8 +84,23 @@ SDK has 4 type of elemnts:
 .......
 .......
 
+   final ArrayList<CustomStyle> styles = new ArrayList<>();
+   styles.add(myStyle);
+   
                 AuthorizeManager autorize = new AuthorizeManager.AuthorizeManagerBuilder()
                         .setmIntegrationId("12345678")
                         .setCustomStyle(styles)
                         .build();
   ```                      
+  
+ Field what you don't want change set as 0. But typeFace should be null to set default value.
+ 
+   ```java
+ CustomStyle myStyle1 = new CustomStyle(0
+                ,0
+                ,type
+                ,getResources().getColor(R.color.textColor)
+                , CustomStyle.Type.MESSAGE);
+.......
+  
+  
