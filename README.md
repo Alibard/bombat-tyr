@@ -64,6 +64,7 @@ AuthorizeManager autorize = new AuthorizeManager.AuthorizeManagerBuilder()
 # Custom syles
 
 SDK has 8 type of elemnts:
+
  * TITLE
  * BUTTON
  * MESSAGE
@@ -101,6 +102,7 @@ SDK has 8 type of elemnts:
                 ,type
                 ,getResources().getColor(R.color.textColor)
                 , CustomStyle.Type.MESSAGE);
-.......
+``` 
+Setting Local doesn't work in this version. 
   
-  
+ 
