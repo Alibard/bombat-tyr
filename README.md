@@ -60,7 +60,7 @@ AuthorizeManager authorize = new AuthorizeManager.Builder()
 
 # Custom styles
 
-SDK has 8 type of elements:
+In total all screens in authorize module has 8 type of elements:
 
  * TITLE
  * BUTTON
@@ -95,7 +95,7 @@ AuthorizeManager autorize = new Builder()
                 .putCustomStyle(mainLayoutStyle)
                 .build(getApplicationContext ());
   ```                      
-In case if user won't change some params user does not set up it. Like: 
+if the user doesn’t want change some params, the user shan't sets it up. Like: 
 ```java
 final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
                   .setBackgroundColor(getResources().getColor(R.color.bg))
