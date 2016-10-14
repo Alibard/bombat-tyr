@@ -64,9 +64,9 @@ SDK has 8 type of elements:
  * PHONE_PREFIX
  * TEXT_BUTTON
  
- If you set some type of styles ( TITLE,BUTTON etc.) it will apply this setting for all elements of this type in this module (Authorize module).
+If you set some type of styles ( TITLE,BUTTON etc.) it will apply this setting for all elements of this type in this module (Authorize module).
  
- Example of adding Custom style  to SDK.
+Example of adding Custom style  to SDK.
  
  ```java
 final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
