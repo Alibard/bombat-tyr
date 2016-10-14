@@ -29,6 +29,13 @@ AuthorizeManager authorize = new AuthorizeManager.Builder()
  authorize.startAuthorization(getApplicationContext ());    
 ```       
 
+setIntegrationId() - integration ID of application (can't be empty necessary);
+setPhone() - user phone (not necessary);
+setLocalized()  - locale of application ( don't work now);
+setAdditionalUserData() - additional data (not necessary);
+putCustomStyle() - custom style, apply for all same item's in module;
+
+
 ## AdditionalData 
 
 It's custom field of user profile will be sent to the Tabata server.
@@ -112,7 +119,3 @@ final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
 ```
 
 ##Setting Local doesn't work in this version. 
-  
- 
-
-
