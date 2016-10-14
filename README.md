@@ -78,7 +78,7 @@ CustomStyle mStyle = new CustomStyle.Builder()
 .......
 
    final ArrayList<CustomStyle> styles = new ArrayList<>();
-   styles.add(myStyle);
+   styles.add(mStyle);
    
                 AuthorizeManager autorize = new Builder()
                         .setIntegrationId("12345678")
