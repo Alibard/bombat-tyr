@@ -43,7 +43,7 @@ Example of adding list of additional data to SDK.
 
 ```java
 final ArrayList<AdditionalDataModel> list = new ArrayList<AdditionalDataModel>();
-list.add(new AdditionalDataModel("color", "read", AdditionalDataModel.NO_VALIDATION));
+list.add(new AdditionalDataModel("color", "red", AdditionalDataModel.NO_VALIDATION));
 
 AuthorizeManager authorize = new AuthorizeManager.Builder()
                         .setIntegrationId("12345678")
