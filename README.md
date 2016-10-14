@@ -31,13 +31,13 @@ AuthorizeManager authorize = new AuthorizeManager.Builder()
 
 ## AdditionalData 
 
-It's custom field of user profile will be sent to the Tabat server.
+It's custom field of user profile will be sent to the Tabata server.
 
 ```java
  final ArrayList<AdditionalDataModel> list = new ArrayList<AdditionalDataModel>();
  list.add(new AdditionalDataModel("color", "read", AdditionalDataModel.NO_VALIDATION));
 ```
-Where: color - it's value name, read - it's value, AdditionalDataModel.NO_VALIDATION - it's type.
+Where: color - it's value name, red - it's value, AdditionalDataModel.NO_VALIDATION - it's type.
 
 Example of adding list of additional data to SDK.
 
@@ -64,37 +64,53 @@ SDK has 8 type of elements:
  * PHONE_PREFIX
  * TEXT_BUTTON
  
+ If you set some type of styles ( TITLE,BUTTON etc.) it will apply this setting for all elements of this type in this module (Authorize module).
+ 
  Example of adding Custom style  to SDK.
  
  ```java
-CustomStyle mStyle = new CustomStyle.Builder()
+final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
                 .setBackgroundColor(getResources().getColor(R.color.bg))
                 .setTextColor(getResources().getColor(R.color.textColor))
                 .setTextSize(getResources().getDimension(R.dimen.header))
                 .setTypeFace(type)
-                .setStyleType(CustomStyle.Type.TITLE)
+                .build();
+                
+final CustomStyle mainLayoutStyle = new CustomStyle.Builder(CustomStyle.Type.MAIN_LAYOUT)
+                .setBackgroundColor(getResources().getColor(R.color.textColor))
                 .build();
 .......
 .......
 
-   final ArrayList<CustomStyle> styles = new ArrayList<>();
-   styles.add(mStyle);
-   
                 AuthorizeManager autorize = new Builder()
                         .setIntegrationId("12345678")
-                        .setCustomStyle(styles)
+                        .putCustomStyle(titleStyle)
+                        .putCustomStyle(mainLayoutStyle)
                         .build(getApplicationContext ());
   ```                      
-  
- Field what you don't want change set as 0. But typeFace should be null to set default value.
- 
-   ```java
- CustomStyle myStyle1 = new CustomStyle(0
-                ,0
-                ,type
-                ,getResources().getColor(R.color.textColor)
-                , CustomStyle.Type.MESSAGE);
-``` 
+In case if user won't change some params hi don't setup it. Like : 
+```java
+final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
+                  .setBackgroundColor(getResources().getColor(R.color.bg))
+                  .build();
+                  
+         or
+         
+final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
+                  .setBackgroundColor(getResources().getColor(R.color.bg))
+                  .setTextColor(getResources().getColor(R.color.textColor))
+                  .build();         
+         
+         or
+         
+final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
+                  .setBackgroundColor(getResources().getColor(R.color.bg))
+                  .setTextColor(getResources().getColor(R.color.textColor))
+                  .setTypeFace(type)
+                  .build();            
+
+```
+
 ##Setting Local doesn't work in this version. 
   
  
