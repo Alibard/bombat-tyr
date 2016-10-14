@@ -26,7 +26,7 @@ AuthorizeManager authorize = new AuthorizeManager.Builder()
                                                  .build(getApplicationContext ());
                                                  
                                                  
- authorize.startAuthorization(getApplicationContext ());    
+authorize.startAuthorization(getApplicationContext ());    
 ```       
 
 * setIntegrationId() - integration ID of application (can't be empty necessary);
@@ -41,8 +41,8 @@ AuthorizeManager authorize = new AuthorizeManager.Builder()
 It's custom field of user profile will be sent to the Tabata server.
 
 ```java
- final ArrayList<AdditionalDataModel> list = new ArrayList<AdditionalDataModel>();
- list.add(new AdditionalDataModel("color", "read", AdditionalDataModel.NO_VALIDATION));
+final ArrayList<AdditionalDataModel> list = new ArrayList<AdditionalDataModel>();
+list.add(new AdditionalDataModel("color", "read", AdditionalDataModel.NO_VALIDATION));
 ```
 Where: color - it's value name, red - it's value, AdditionalDataModel.NO_VALIDATION - it's type.
 
@@ -86,14 +86,14 @@ final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
 final CustomStyle mainLayoutStyle = new CustomStyle.Builder(CustomStyle.Type.MAIN_LAYOUT)
                 .setBackgroundColor(getResources().getColor(R.color.textColor))
                 .build();
-.......
-.......
+    .......
+    .......
 
-                AuthorizeManager autorize = new Builder()
-                        .setIntegrationId("12345678")
-                        .putCustomStyle(titleStyle)
-                        .putCustomStyle(mainLayoutStyle)
-                        .build(getApplicationContext ());
+AuthorizeManager autorize = new Builder()
+                .setIntegrationId("12345678")
+                .putCustomStyle(titleStyle)
+                .putCustomStyle(mainLayoutStyle)
+                .build(getApplicationContext ());
   ```                      
 In case if user won't change some params user does not set up it. Like: 
 ```java
