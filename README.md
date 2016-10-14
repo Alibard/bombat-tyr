@@ -88,7 +88,7 @@ final CustomStyle mainLayoutStyle = new CustomStyle.Builder(CustomStyle.Type.MAI
                         .putCustomStyle(mainLayoutStyle)
                         .build(getApplicationContext ());
   ```                      
-In case if user won't change some params hi don't setup it. Like : 
+In case if user won't change some params user does not set up it. Like: 
 ```java
 final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
                   .setBackgroundColor(getResources().getColor(R.color.bg))
