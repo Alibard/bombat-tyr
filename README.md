@@ -67,11 +67,13 @@ SDK has 8 type of elements:
  Example of adding Custom style  to SDK.
  
  ```java
- CustomStyle myStyle1 = new CustomStyle(getResources().getColor(R.color.bg)
-                ,getResources().getDimension(R.dimen.header)
-                ,type
-                ,getResources().getColor(R.color.textColor)
-                , CustomStyle.Type.MESSAGE);
+CustomStyle mStyle = new CustomStyle.Builder()
+                .setBackgroundColor(getResources().getColor(R.color.bg))
+                .setTextColor(getResources().getColor(R.color.textColor))
+                .setTextSize(getResources().getDimension(R.dimen.header))
+                .setTypeFace(type)
+                .setStyleType(CustomStyle.Type.TITLE)
+                .build();
 .......
 .......
 
