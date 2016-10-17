@@ -1,8 +1,9 @@
-## Tabata SDK
+## Tabata Android SDK
 
 #Initialize SDK
 
-To properly work SKD need be initialized
+To properly work SKD is needed to be initialized.
+
 ```java
 public class MyApplication extends Application{
     @Override
@@ -14,7 +15,7 @@ public class MyApplication extends Application{
 ```
 
 ## Authorize Module 
-This module should connect application and API on Tabata Server.
+This module shall authorize user on Tabata Server by obtaining an AuthToken which is required to use all Tabata services.
 
 
 Usage
@@ -29,16 +30,16 @@ AuthorizeManager authorize = new AuthorizeManager.Builder()
 authorize.startAuthorization(getApplicationContext ());    
 ```       
 
-* setIntegrationId() - integration ID of application (can't be empty necessary);
-* setPhone() - user phone (not necessary);
-* setLocalized()  - locale of application ( don't work now);
+* setIntegrationId() - integration ID of application (can't be empty,  is requiered);
+* setPhone() - user phone (not required);
+* setLocalized()  - locale of application (this parameter does not work in current version of SDK);
 * setAdditionalUserData() - additional data (not necessary);
 * putCustomStyle() - custom style, apply for all same item's in module;
 
 
-## AdditionalData 
+### AdditionalData 
 
-It's custom field of user profile will be sent to the Tabata server.
+Custom fields of user profile that will be sent to the Tabata server.
 
 ```java
 final ArrayList<AdditionalDataModel> list = new ArrayList<AdditionalDataModel>();
@@ -58,7 +59,7 @@ AuthorizeManager authorize = new AuthorizeManager.Builder()
                         .build();
 ```   
 
-## Custom styles
+### Custom styles
 
 In total all screens in authorize module has 8 type of elements:
 
@@ -118,4 +119,4 @@ final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
 
 ```
 
-## Setting Local doesn't work in this version. 
+### Setting Local doesn't work in this version. 
