@@ -42,7 +42,7 @@ It's custom field of user profile will be sent to the Tabata server.
 
 ```java
 final ArrayList<AdditionalDataModel> list = new ArrayList<AdditionalDataModel>();
-list.add(new AdditionalDataModel("color", "read", AdditionalDataModel.NO_VALIDATION));
+list.add(new AdditionalDataModel("color", "red", AdditionalDataModel.NO_VALIDATION));
 ```
 Where: color - it's value name, red - it's value, AdditionalDataModel.NO_VALIDATION - it's type.
 
