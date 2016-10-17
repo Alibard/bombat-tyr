@@ -33,21 +33,26 @@ authorize.startAuthorization(getApplicationContext ());
 * setIntegrationId() - integration ID of application (can't be empty,  is requiered);
 * setPhone() - user phone (not required);
 * setLocalized()  - locale of application (this parameter does not work in current version of SDK);
-* setAdditionalUserData() - additional data (not necessary);
-* putCustomStyle() - custom style, apply for all same item's in module;
+* setAdditionalUserData() - additional user profile data (not required);
+* putCustomStyle() - custom style applied for all same UI items in module (not required);
 
 
-### AdditionalData 
+### Sending Additional User Profile Data 
 
-Custom fields of user profile that will be sent to the Tabata server.
+Custom fields of user profile can be sent to the Tabata server as items of ArrayList.
 
 ```java
 final ArrayList<AdditionalDataModel> list = new ArrayList<AdditionalDataModel>();
 list.add(new AdditionalDataModel("color", "red", AdditionalDataModel.NO_VALIDATION));
 ```
-Where: color - it's value name, red - it's value, AdditionalDataModel.NO_VALIDATION - it's type.
+Where: "color" - is value name, "red" - is value, "AdditionalDataModel.NO_VALIDATION" - is field type.
 
-Example of adding list of additional data to SDK.
+Field type shall be:
+* "AdditionalDataModel.NO_VALIDATION" - for freely editable user profile fields which are not supposed to be validated by user or Tabata authorities after every change of value.
+* "AdditionalDataModel.VALIDATION" - for fields which are supposed to be validated by user or Tabata authorities after every change of value.
+* "AdditionalDataModel.WITHOUT_CHANGES" - for not editable user profile fields.
+
+Example of adding ArrayList of additional data to SDK.
 
 ```java
 final ArrayList<AdditionalDataModel> list = new ArrayList<AdditionalDataModel>();
@@ -59,9 +64,9 @@ AuthorizeManager authorize = new AuthorizeManager.Builder()
                         .build();
 ```   
 
-### Custom styles
+### Applying custom UI items styles
 
-In total all screens in authorize module has 8 type of elements:
+In total, all screens in Authorize module have 8 types of elements:
 
  * TITLE
  * BUTTON
@@ -72,9 +77,9 @@ In total all screens in authorize module has 8 type of elements:
  * PHONE_PREFIX
  * TEXT_BUTTON
  
-If you set some type of styles ( TITLE,BUTTON etc.) it will apply this setting for all elements of this type in this module (Authorize module).
+If you set some type of styles ( TITLE,BUTTON etc.) it will apply this setting for all elements of this type in Authorize module.
  
-Example of adding Custom style  to SDK.
+Example of adding Custom style to Authorize module.
  
  ```java
 final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
@@ -96,7 +101,7 @@ AuthorizeManager autorize = new Builder()
                 .putCustomStyle(mainLayoutStyle)
                 .build(getApplicationContext ());
   ```                      
-if the user doesn’t want change some params, the user shan't sets it up. Like: 
+If you don't want to change some params, you may simply not set them up. Like: 
 ```java
 final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
                   .setBackgroundColor(getResources().getColor(R.color.bg))
@@ -119,4 +124,5 @@ final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
 
 ```
 
-### Setting Local doesn't work in this version. 
+### Setting Localization
+Setting localization does not work in this version of SDK. 
