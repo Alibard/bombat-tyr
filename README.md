@@ -13,7 +13,7 @@ public class MyApplication extends Application{
 }
 ```
 
-###Authorize Module 
+## Authorize Module 
 This module should connect application and API on Tabata Server.
 
 
@@ -58,7 +58,7 @@ AuthorizeManager authorize = new AuthorizeManager.Builder()
                         .build();
 ```   
 
-# Custom styles
+## Custom styles
 
 In total all screens in authorize module has 8 type of elements:
 
@@ -118,4 +118,4 @@ final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
 
 ```
 
-##Setting Local doesn't work in this version. 
+## Setting Local doesn't work in this version. 
