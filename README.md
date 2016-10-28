@@ -119,7 +119,7 @@ final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
 final CustomStyle titleStyle = new CustomStyle.Builder(CustomStyle.Type.TITLE)
                   .setBackgroundColor(getResources().getColor(R.color.bg))
                   .setTextColor(getResources().getColor(R.color.textColor))
-                  .setTypeFace(type)
+                  .setTypeFace("prisma.ttf")
                   .build();            
 
 ```
