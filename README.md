@@ -129,9 +129,12 @@ Setting localization does not work in this version of SDK.
 
 ## User Profile Module 
 
+
 This module shall show user profile data and edit them. 
 
+
 Usage
+
 
 ```java
 final ProfileManager profile = new ProfileManager.Builder()
@@ -142,16 +145,20 @@ final ProfileManager profile = new ProfileManager.Builder()
                         .putValidator(nameValidation)
                         .build(getApplicationContext());
 
+
        profile.startProfile(getApplicationContext());
 ```
 * putCustomStyle(profileTitle) - custom style for view element (not required);
 * setAdditionalUserData(fields) - additional fields for parsing data (not required);
-* setIntegrationId("12345678") - integration ID of application (can't be empty,  is requiered);
-* putValidator(emailValidation) - valifatain for fields 2 type (can't be empty,  is requiered, should be all type of validation "Email" and "Names");
+* setIntegrationId("12345678") - integration ID of application (can't be empty,  is required);
+* putValidator(emailValidation) - validation for fields 2 type (can't be empty,  is required, should be all type of validation "Email" and "Names");
+
 
 ### Put Additional User Profile Fields  
 
+
 Custom fields of user profile can be get from the Tabata server as items of ArrayList. And for they parsing need name of filed.
+
 
 ```java
 final ArrayList<AdditionalFieldModel> fields = new ArrayList<>();
@@ -161,12 +168,15 @@ final ArrayList<AdditionalFieldModel> fields = new ArrayList<>();
         
 Where: "mobile_device_id" - is field name, "device id" - is field title, "AdditionalDataModel.NO_VALIDATION" - is field type.
 
+
 Field type shall be:
 * "AdditionalDataModel.NO_VALIDATION" - for freely editable user profile fields which are not supposed to be validated by user or Tabata authorities after every change of value.
 * "AdditionalDataModel.VALIDATION" - for fields which are supposed to be validated by user or Tabata authorities after every change of value.
 * "AdditionalDataModel.WITHOUT_CHANGES" - for not editable user profile fields.
 
+
 Example of adding ArrayList of additional field to SDK.
+
 
 ```java
 final ProfileManager profile = new ProfileManager.Builder()
@@ -175,9 +185,12 @@ final ProfileManager profile = new ProfileManager.Builder()
                         .build(getApplicationContext());
 ```
 
+
 ### Applying custom UI items styles
 
+
 In total, all screens in Authorize module have 6 types of elements:
+
 
  * TEXT_FIELD
  * TEXT_TITLE
@@ -190,12 +203,14 @@ If you set some type of styles ( TEXT_FIELD,FAB_BTN etc.) it will apply this set
  
 Example of adding Custom style to Profile module.
 
+
 ```java
  final CustomProfile profileTitle = new CustomProfile.Builder(CustomProfile.Type.TEXT_TITLE)
                 .setTextColor(getResources().getColor(R.color.bg))
                 .setTypeFace("prisma.ttf")
                 .build();
 ```
+
 
 If you don't want to change some params, you may simply not set them up. Like: 
 ```java
@@ -221,19 +236,27 @@ final CustomProfile titleStyle = new CustomProfile.Builder(CustomProfile.Type.TE
 
 
 
+
+
+
 ### Setting Validators 
+
 
 Programmer should set Validator for all of fields 2 type ( First name, Last name, Email). For this work he must implement our interface Validator in his validation class. And override all methods. All logic of validation should be in  "boolean validate(String s);" method. I
 
+
 Example: 
+
 
 ```java
 public class EmailValidation implements Validator{
+
 
     @Override
     public boolean validate(String s) {
         return isStringValid(s);
     }
+
 
     @NonNull
     @Override
@@ -242,10 +265,14 @@ public class EmailValidation implements Validator{
     }
 
 
+
+
     @Override
     public String title(String s) {
         return s;
     }
+
+
 
 
     private boolean isStringValid(String s) {
@@ -259,11 +286,15 @@ public class EmailValidation implements Validator{
 ```
 In this version of SDK we represent 2 type of validation - Email and Name. Email type for validation Email field and Name for First and Last names.
 
+
 Programmer should set all his validation in ProfileManager.
+
 
 Example:
 
+
 ```java
+
 
         final Validator emailValidation = new EmailValidation();
         final Validator nameValidation = new NameValidation();
