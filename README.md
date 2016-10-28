@@ -197,6 +197,30 @@ Example of adding Custom style to Profile module.
                 .build();
 ```
 
+If you don't want to change some params, you may simply not set them up. Like: 
+```java
+final CustomProfile titleStyle = new CustomProfile.Builder(CustomProfile.Type.TEXT_TITLE)
+                  .setBackgroundColor(getResources().getColor(R.color.bg))
+                  .build();
+                  
+         or
+         
+final CustomProfile titleStyle = new CustomProfile.Builder(CustomProfile.Type.TEXT_TITLE)
+                  .setBackgroundColor(getResources().getColor(R.color.bg))
+                  .setTextColor(getResources().getColor(R.color.textColor))
+                  .build();         
+         
+         or
+         
+final CustomProfile titleStyle = new CustomProfile.Builder(CustomProfile.Type.TEXT_TITLE)
+                  .setBackgroundColor(getResources().getColor(R.color.bg))
+                  .setTextColor(getResources().getColor(R.color.textColor))
+                  .setTypeFace("prisma.ttf")
+                  .build();            
+```
+
+
+
 ### Setting Validators 
 
 Programmer should set Validator for all of fields 2 type ( First name, Last name, Email). For this work he must implement our interface Validator in his validation class. And override all methods. All logic of validation should be in  "boolean validate(String s);" method. I
