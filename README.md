@@ -198,3 +198,56 @@ Example of adding Custom style to Profile module.
 ```
 
 ### Setting Validators 
+
+Programmer should set Validator for all of fields 2 type ( First name, Last name, Email). For this work he must implement our interface Validator in his validation class. And override all methods. All logic of validation should be in  "boolean validate(String s);" method. I
+
+Example: 
+
+```java
+public class EmailValidation implements Validator{
+
+    @Override
+    public boolean validate(String s) {
+        return isStringValid(s);
+    }
+
+    @NonNull
+    @Override
+    public Type getType() {
+        return Type.EMAIL;
+    }
+
+
+    @Override
+    public String title(String s) {
+        return s;
+    }
+
+
+    private boolean isStringValid(String s) {
+        String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        Matcher matcher = pattern.matcher(s);
+        return matcher.matches();
+    }
+}
+```
+In this version of SDK we represent 2 type of validation - Email and Name. Email type for validation Email field and Name for First and Last names.
+
+Programmer should set all his validation in ProfileManager.
+
+Example:
+
+```java
+
+        final Validator emailValidation = new EmailValidation();
+        final Validator nameValidation = new NameValidation();
+        
+        final ProfileManager profile = new ProfileManager.Builder()
+                        .setIntegrationId("12345678")
+                        .putValidator(emailValidation)
+                        .putValidator(nameValidation)
+                        .build(getApplicationContext());
+```
+In case if he will not put some of validators all changed data in Edit Profile will consider as not valid!!!
