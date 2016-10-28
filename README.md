@@ -189,7 +189,7 @@ final ProfileManager profile = new ProfileManager.Builder()
 ### Applying custom UI items styles
 
 
-In total, all screens in Authorize module have 6 types of elements:
+In total, all screens in Profile module have 6 types of elements:
 
 
  * TEXT_FIELD
