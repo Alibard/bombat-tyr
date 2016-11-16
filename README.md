@@ -372,7 +372,7 @@ public class FirstAction implements ICallbackEvent {
 
 ```
 
-After creating class and it configuration it need add to ParcelManager.
+After creating class and it configuration it need add to ParcelManager. Type of even will show for what point of popup menu will apply. For THIRD type will apply only style of displaying.
 
 Usage
 
