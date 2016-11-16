@@ -329,7 +329,7 @@ Usage
 * setItemSettings(itemSettings) - settings for visually displaying of all list items (not required).
 
 
-### CustomEvent 
+### Custom Event 
 
 In List of Parcel user has opportunity set custom event on click on popup menu of list item. Programmer has 2 slots for such custom event.
 For  using this opportunity programmer should create class and implement SDK interface.
@@ -388,7 +388,7 @@ Usage
                         
 ```           
 
-### ItemSettings 
+### Item Settings 
 
 Give opportunity programmer to set visual style for all items in list.  For this he should configure ItemSettings.
 
@@ -405,7 +405,7 @@ Usage
                         
 ```
 
-### ParcelStateManager
+### Parcel State Manager
 
 Give opportunity  programmer  to set different icon for different status of parcel.
 
@@ -422,7 +422,7 @@ Usage
 All fields are required and cen't be empty. 
 
 
-### Custom Style 
+### Applying custom UI items styles
 
 In total, all screens in Parcel module have 7 types of elements:
 
