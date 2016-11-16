@@ -306,3 +306,144 @@ Example:
                         .build(getApplicationContext());
 ```
 In case if he will not put some of validators all changed data in Edit Profile will consider as not valid!!!
+
+## Parcel Module
+
+Parcel module consist form 2 part (List of parcel and Parcel Detail). Main mission of this module show information about user parcels. This two parts can be setup separately or together.
+
+Usage
+
+
+```java                
+            ParcelManager parcelManager = new ParcelManager.Builder()
+                        .setIntegrationId("12345678")
+                        .build(getApplicationContext());
+                        
+            parcelManager.startParcelList();
+```
+
+* putCustomStyle(customParcel) - custom style for view element (not required);
+* putCustomEvent(firstAction) - set custom event on click on popup menu of list item (not required);
+* setIntegrationId("12345678") - integration ID of application (can't be empty,  is required);
+* setCustomState(stateManager) - iopportunity to set icon for some state of parcel (not required);
+* setItemSettings(itemSettings) - settings for visually displaying of all list items (not required).
+
+
+### CustomEvent 
+
+In List of Parcel user has opportunity set custom event on click on popup menu of list item. Programmer has 2 slots for such custom event.
+For  using this opportunity programmer should create class and implement SDK interface.
+
+Usage
+
+```java
+public class FirstAction implements ICallbackEvent {
+
+    @Override
+    public String title() {
+        return "first";
+    }
+
+    @Override
+    public void onClickEvent(Context context, ParcelModel model) {
+        Toast.makeText(context,"Message",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public Type getType() {
+        return Type.FIRST;
+    }
+
+    @Override
+    public int imageID() {
+        return R.drawable.cast_abc_scrubber_control_off_mtrl_alpha;
+    }
+
+    @Override
+    public int bgColo() {
+        return R.color.bg;
+    }
+
+    @Override
+    public int textColor() {
+        return R.color.bleak;
+    }
+}
+
+```
+
+After creating class and it configuration it need add to ParcelManager.
+
+Usage
+
+
+```java
+
+        ICallbackEvent firstAction = new FirstAction();
+        
+        ParcelManager parcelManager = new ParcelManager.Builder()
+                        .setIntegrationId("12345678")
+                        .putCustomEvent(firstAction)
+                        .build(getApplicationContext());
+                        
+```           
+
+### ItemSettings 
+
+Give opportunity programmer to set visual style for all items in list.  For this he should configure ItemSettings.
+
+Usage
+
+
+```java
+        ItemSettings itemSettings = new ItemSettings.Builder()
+                        .setImageId(R.drawable.ic_delivery11)
+                        .setTitleName("state")
+                        .setBgColor(R.color.textColor)
+                        .setTestColor(R.color.colorPrimary)
+                        .build();
+                        
+```
+
+### ParcelStateManager
+
+Give opportunity  programmer  to set different icon for different status of parcel.
+
+Usage
+
+
+```java
+        ParcelStateManager stateManager = new ParcelStateManager.Builder()
+                        .setState(ParcelStateManager.States.PO0005)
+                        .setIconId(R.drawable.ic_delivery)
+                        .build();
+```
+
+All fields are required and cen't be empty. 
+
+
+### Custom Style 
+
+In total, all screens in Parcel module have 7 types of elements:
+
+
+* TEXT_FIELD,
+* TEXT_TITLE,
+* TOOLBAR_TITLE,
+* TOOLBAR_LAYOUT,
+* DATA_LAYOUT,
+* CONFIRM_BUTTON,
+* CANCEL_BUTTON.
+ 
+If you set some type of styles ( TEXT_FIELD,TEXT_TITLE etc.) it will apply this setting for all elements of this type in Parcel module.
+ 
+Example of adding Custom style to Profile module.
+
+Usage
+
+
+```java
+        CustomParcel customParcel = new CustomParcel.Builder(CustomParcel.Type.TOOLBAR_TITLE)
+                        .setBackgroundColor(getResources().getColor(R.color.bg))
+                        .build();
+```                      
