@@ -446,4 +446,24 @@ Usage
         CustomParcel customParcel = new CustomParcel.Builder(CustomParcel.Type.TOOLBAR_TITLE)
                         .setBackgroundColor(getResources().getColor(R.color.bg))
                         .build();
-```                      
+``` 
+
+### Parcel Detail
+
+This part of module can be implemented separately. For this need Fill ParcelDetailManager.
+
+Usage
+
+
+```java
+         ParcelDetailManager manager = new ParcelDetailManager.Builder()
+                        .setIntegrationId("12345678")
+                        .setParceId("someId")
+                        .build(getApplicationContext());
+                manager.startParcelDetail();
+                
+```
+* setIntegrationId("12345678") -  - integration ID of application (can't be empty,  is required);
+* setParceId("someId")  - ID of parcel (can't be empty,  is required);
+* putCustomState(stateManager) - custom style for view element (not required).
+
