@@ -463,7 +463,10 @@ Usage
                 manager.startParcelDetail();
                 
 ```
+
+* putCustomStyle(customParcel) - custom style for view element (not required);
 * setIntegrationId("12345678") -  - integration ID of application (can't be empty,  is required);
 * setParceId("someId")  - ID of parcel (can't be empty,  is required);
-* putCustomState(stateManager) - custom style for view element (not required).
+* setCustomState(stateManager) - iopportunity to set icon for some state of parcel (not required).
+
 
