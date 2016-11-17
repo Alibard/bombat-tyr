@@ -419,7 +419,7 @@ Usage
                         .build();
 ```
 
-All fields are required and cen't be empty. 
+All fields are required and can't be empty. 
 
 
 ### Applying custom UI items styles
