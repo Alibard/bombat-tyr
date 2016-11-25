@@ -404,6 +404,7 @@ Usage
                         .build();
                         
 ```
+Programmer have opportunity use such fields as (id,state,code,sender,receiver,price,weight) for title in list item.
 
 ### Parcel State Manager
 
@@ -466,7 +467,8 @@ Usage
 
 * putCustomStyle(customParcel) - custom style for view element (not required);
 * setIntegrationId("12345678") -  - integration ID of application (can't be empty,  is required);
-* setParceId("someId")  - ID of parcel (can't be empty,  is required);
+* setParceId("someId")  - ID of parcel (id or code can't be empty, one of this is required);
+* setParcelCode("someCode")  - code  of parcel (id or code can't be empty, one of this is required);
 * setCustomState(stateManager) - iopportunity to set icon for some state of parcel (not required).
 
 
