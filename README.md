@@ -471,4 +471,29 @@ Usage
 * setParcelCode("someCode")  - code  of parcel (id or code can't be empty, one of this is required);
 * setCustomState(stateManager) - iopportunity to set icon for some state of parcel (not required).
 
+## Gts module 
+
+This part of SDK is needed for trekking of user geo data. 
+
+```java
+ GtsManager manager = new GtsManager.Builder()
+                        .setType(GtsManager.CLIENT)
+                        .setFilterCoefficient(0.01)
+                        .setIntegrationId("12345678")
+                        .putLocationConfig(locationConfig)
+                        .build(getApplicationContext());
+                manager.startGeoTag();
+```
+* setType(GtsManager.CLIENT) - type for sending data (not required);
+* setIntegrationId("12345678") -  - integration ID of application (can't be empty,  is required);
+* setFilterCoefficient(0.01)  - value for filtering (not required);
+* putLocationConfig(locationConfig)  - location config (not required);
+
+### Location Config
+
+Configuration for location statement
+
+```java
+ LocationConfig locationConfig = new LocationConfig(LocationConfig.Type.COURIER, 10, 20, 3, false);
+```
 
